@@ -1,3 +1,5 @@
+import api from '../api';
+
 const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -7,17 +9,7 @@ const Login = () => {
       password: event.target.password.value,
     };
 
-    try {
-      const response = await fetch('http://localhost:3000/api/login', {
-        method: 'POST',
-        mode: "cors",
-        headers: new Headers({ "Content-Type": "application/json" }),
-        body: JSON.stringify(creds)
-      });
-      response.json().then((data) => console.log(data));
-    } catch (error) {
-      console.log(error);
-    }
+    api.login(creds);
   };
 
   return (
