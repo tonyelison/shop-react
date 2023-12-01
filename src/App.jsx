@@ -5,7 +5,7 @@ function App() {
     <>
       <button onClick={() => api.hello()}>Test the API!</button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

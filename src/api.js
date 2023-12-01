@@ -3,12 +3,12 @@ const API_URL = import.meta.env.VITE_API_URL;
 const http = (() => {
   const req = async (endpoint, body, options) => {
     const reqOptions = {
-      headers: new Headers({ "Content-Type": "application/json" }),
+      headers: new Headers({ 'Content-Type': 'application/json' }),
       body: JSON.stringify(body),
-      mode: "cors",
+      mode: 'cors',
       ...options,
     };
-  
+
     try {
       const response = await fetch(`${API_URL}/${endpoint}`, reqOptions);
       return await response.json();
@@ -19,10 +19,14 @@ const http = (() => {
 
   return {
     get: (...args) => req(...args),
-    post: (endpoint, body, options) => req(endpoint, body, { method: 'POST', ...options }),
-    put: (endpoint, body, options) => req(endpoint, body, { method: 'PUT', ...options }),
-    patch: (endpoint, body, options) => req(endpoint, body, { method: 'PATCH', ...options }),
-    del: (endpoint, body, options) => req(endpoint, body, { method: 'DELETE', ...options }),  
+    post: (endpoint, body, options) =>
+      req(endpoint, body, { method: 'POST', ...options }),
+    put: (endpoint, body, options) =>
+      req(endpoint, body, { method: 'PUT', ...options }),
+    patch: (endpoint, body, options) =>
+      req(endpoint, body, { method: 'PATCH', ...options }),
+    del: (endpoint, body, options) =>
+      req(endpoint, body, { method: 'DELETE', ...options }),
   };
 })();
 
