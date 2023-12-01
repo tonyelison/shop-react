@@ -1,4 +1,4 @@
-const Login = () => {
+const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -8,7 +8,7 @@ const Login = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/api/login', {
+      const response = await fetch('http://localhost:3000/api/signup', {
         method: 'POST',
         mode: "cors",
         headers: new Headers({ "Content-Type": "application/json" }),
@@ -22,7 +22,7 @@ const Login = () => {
 
   return (
     <>
-      <h1>Login</h1>
+      <h1>Signup</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
@@ -33,10 +33,10 @@ const Login = () => {
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" name="password" />
         </div>
-        <input type="submit" value="Log In" />
+        <input type="submit" value="Signup" />
       </form>
     </>
   );
 };
 
-export default Login;
+export default Signup;
