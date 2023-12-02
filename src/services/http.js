@@ -8,6 +8,7 @@ const Method = {
 };
 
 const http = (() => {
+  // Build and execute a fetch request
   const req = async (method, endpoint, body, options) => {
     const headers = new Headers();
     if ([Method.POST, Method.PUT, Method.PATCH].includes(method)) {
@@ -22,11 +23,13 @@ const http = (() => {
       ...options,
     };
 
+    const response = await fetch(`${API_URL}/${endpoint}`, reqOptions).catch(
+      (error) => console.log(error),
+    );
     try {
-      const response = await fetch(`${API_URL}/${endpoint}`, reqOptions);
       return await response.json();
     } catch (error) {
-      console.log(error);
+      /* do nothing; no parseable json body */
     }
   };
 
