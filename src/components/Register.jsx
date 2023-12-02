@@ -1,6 +1,6 @@
 import api from '../services/api';
 
-const Signup = () => {
+const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -9,12 +9,12 @@ const Signup = () => {
       password: event.target.password.value,
     };
 
-    api.signup(creds);
+    api.register(creds);
   };
 
   return (
     <>
-      <h1>Signup</h1>
+      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
@@ -25,10 +25,10 @@ const Signup = () => {
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" name="password" />
         </div>
-        <input type="submit" value="Signup" />
+        <input type="submit" value="Sign Up" />
       </form>
     </>
   );
 };
 
-export default Signup;
+export default Register;

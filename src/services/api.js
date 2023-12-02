@@ -32,8 +32,9 @@ const http = (() => {
 
 const api = (() => ({
   hello: () => http.get('hello'),
-  login: (creds) => http.post('login', creds),
-  signup: (creds) => http.post('signup', creds),
+  register: (creds) => http.post('users', creds),
+  login: (creds) => http.post('session', creds),
+  logout: (creds) => http.del('session', creds),
 }))();
 
 export default api;
