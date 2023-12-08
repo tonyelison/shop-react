@@ -20,6 +20,7 @@ const http = (() => {
       headers,
       body: JSON.stringify(body),
       mode: 'cors',
+      credentials: 'include',
       ...options,
     };
 
