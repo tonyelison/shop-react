@@ -3,6 +3,7 @@ import App from './App';
 import ErrorPage from './components/ErrorPage';
 import Register from './components/Register';
 import Login from './components/Login';
+import Products from './components/Products';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: 'login',
     element: <Login />,
+  },
+  {
+    path: 'products',
+    element: <Products />,
   },
   // {
   //   path: "authenticated",
