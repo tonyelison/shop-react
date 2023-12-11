@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Spinner from 'react-bootstrap/Spinner';
 import http from '../services/http';
 
 const Products = () => {
@@ -16,20 +17,19 @@ const Products = () => {
     <>
       <h1>Products</h1>
       <div className="product-list">
-        {isLoading
-          ? 'Loading...'
-          : products.map((product) => {
-              return (
-                <li key={product._id}>
-                  <div>{product.name}</div>
-                  <div>{product.description}</div>
-                  <img
-                    src={'./' + product.image_url}
-                    alt={product.description}
-                  />
-                </li>
-              );
-            })}
+        {isLoading ? (
+          <Spinner animation="border" />
+        ) : (
+          products.map((product) => {
+            return (
+              <li key={product._id}>
+                <div>{product.name}</div>
+                <div>{product.description}</div>
+                <img src={'./' + product.image_url} alt={product.description} />
+              </li>
+            );
+          })
+        )}
       </div>
     </>
   );
