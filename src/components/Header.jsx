@@ -15,8 +15,8 @@ const Header = () => {
             <Link to="/products">Products</Link>
           </li>
           <li className="flex-right">
-            <Dropdown id="avatar-dropdown" variant="outline-primary">
-              <Dropdown.Toggle variant="outline-primary">
+            <Dropdown id="avatar-dropdown">
+              <Dropdown.Toggle variant="outline-light">
                 <img src="./src/assets/user.svg"></img>
               </Dropdown.Toggle>
               <DropdownMenu>
