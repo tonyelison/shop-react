@@ -1,4 +1,5 @@
 import api from '../services/api';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const handleSubmit = async (event) => {
@@ -14,7 +15,7 @@ const Register = () => {
 
   return (
     <>
-      <h1>Sign Up</h1>
+      <h1>Create Account</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
@@ -27,6 +28,10 @@ const Register = () => {
         </div>
         <input type="submit" value="Sign Up" />
       </form>
+      <br />
+      <Link to="/login">Log In</Link>
+      <br />
+      <Link to="/">Home</Link>
     </>
   );
 };
