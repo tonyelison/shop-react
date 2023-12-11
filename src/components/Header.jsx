@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { DropdownMenu } from 'react-bootstrap';
 import '../styles/Header.css';
 
 const Header = () => {
@@ -15,17 +15,19 @@ const Header = () => {
             <Link to="/products">Products</Link>
           </li>
           <li className="flex-right">
-            <Link to="/login">Log In</Link>
-          </li>
-          <li>
-            <Link to="/register">Create Account</Link>
-          </li>
-          <li>
-            <DropdownButton id="avatar-dropdown" title="Dropdown">
-              <Dropdown.Item href="#action/3.1">Action</Dropdown.Item>
-              <Dropdown.Item href="#action/3.2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#action/3.3">Something</Dropdown.Item>
-            </DropdownButton>
+            <Dropdown id="avatar-dropdown" variant="outline-primary">
+              <Dropdown.Toggle variant="outline-primary">
+                <img src="./src/assets/user.svg"></img>
+              </Dropdown.Toggle>
+              <DropdownMenu>
+                <Dropdown.Item as={Link} to="/login">
+                  Log In
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to="/register">
+                  Create Account
+                </Dropdown.Item>
+              </DropdownMenu>
+            </Dropdown>
           </li>
         </ul>
       </nav>
