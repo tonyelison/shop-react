@@ -14,5 +14,6 @@
 @import '../node_modules/bootstrap/scss/mixins';
 @import '../node_modules/bootstrap/scss/root';
 
-// Optional
+// Optional - include bootstrap component styles here
+@import '../node_modules/bootstrap/scss/_buttons';
 @import '../node_modules/bootstrap/scss/_dropdown';
