@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
 import '../styles/Header.css';
 
 const Header = () => {
@@ -17,6 +19,13 @@ const Header = () => {
           </li>
           <li>
             <Link to="/register">Create Account</Link>
+          </li>
+          <li>
+            <DropdownButton id="avatar-dropdown" title="Dropdown">
+              <Dropdown.Item href="#action/3.1">Action</Dropdown.Item>
+              <Dropdown.Item href="#action/3.2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#action/3.3">Something</Dropdown.Item>
+            </DropdownButton>
           </li>
         </ul>
       </nav>
