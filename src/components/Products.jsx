@@ -8,7 +8,7 @@ const Products = () => {
   useEffect(() => {
     http.get('products').then((data) => {
       setIsLoading(false);
-      setProducts(data.products);
+      setProducts(data);
     });
   }, []);
 
@@ -21,9 +21,12 @@ const Products = () => {
           : products.map((product) => {
               return (
                 <li key={product._id}>
-                  {product.name}
-                  <br />
-                  {product.description}
+                  <div>{product.name}</div>
+                  <div>{product.description}</div>
+                  <img
+                    src={'./' + product.image_url}
+                    alt={product.description}
+                  />
                 </li>
               );
             })}
