@@ -10,13 +10,13 @@ const Header = () => {
       <nav>
         <ul>
           <li>
+            <Link to="/products">Products</Link>
+          </li>
+          <li className="flex-right">
             <Link to="/login">Log In</Link>
           </li>
           <li>
             <Link to="/register">Create Account</Link>
-          </li>
-          <li>
-            <Link to="/products">View Products</Link>
           </li>
         </ul>
       </nav>

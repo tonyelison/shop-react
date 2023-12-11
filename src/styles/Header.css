@@ -3,6 +3,8 @@ header {
 }
 
 header .logo {
+  width: auto;
+  margin-right: 30px;
   font-size: 32px;
   font-weight: 900;
 }
@@ -20,10 +22,15 @@ header a {
 }
 
 header nav {
+  width: 100%;
   font-size: 18px;
   font-weight: 500;
 }
 
 header nav ul {
   list-style: none;
+}
+
+header nav ul li {
+  width: auto;
 }
