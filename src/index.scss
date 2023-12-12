@@ -1,6 +1,4 @@
-/*
-Globals
-*/
+@import './styles/bootstrap-custom.scss';
 
 * {
   margin: 0;
@@ -10,4 +8,12 @@ Globals
 
 :root {
   font-family: 'Satoshi', sans-serif;
+}
+
+main {
+  padding: 30px;
+}
+
+.flex-right {
+  margin-left: auto;
 }
