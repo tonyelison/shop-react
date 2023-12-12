@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { DropdownMenu } from 'react-bootstrap';
-import '../styles/Header.scss';
+import './Header.scss';
 
 const Header = () => {
   return (
