@@ -1,0 +1,47 @@
+header {
+  padding: 30px;
+
+  a {
+    text-decoration: none;
+    text-wrap: nowrap;
+  }
+
+  &,
+  nav ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  nav {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  nav ul {
+    list-style: none;
+  }
+
+  nav ul li {
+    width: auto;
+  }
+
+  .logo {
+    width: auto;
+    margin-right: 30px;
+    font-size: 32px;
+    font-weight: 900;
+  }
+
+  .avatar-dropdown {
+    .dropdown-menu {
+      text-align: right;
+    }
+
+    .dropdown-item:active {
+      color: var(--bs-dropdown-link-color);
+      background-color: var(--bs-primary-bg-subtle);
+    }
+  }
+}
