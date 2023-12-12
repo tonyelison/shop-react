@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
-import http from '../utils/http';
+import http from '@/utils/http';
 
 const Products = () => {
   const [isLoading, setIsLoading] = useState(true);
