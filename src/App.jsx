@@ -1,15 +1,5 @@
-import { Outlet } from 'react-router-dom';
-import Header from './components/Header';
+import AppRouterProvider from './providers/router';
 
-function App() {
-  return (
-    <>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-    </>
-  );
-}
+const App = () => <AppRouterProvider />;
 
 export default App;

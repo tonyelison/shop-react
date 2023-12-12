@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App';
-import ErrorPage from './components/ErrorPage';
-import Home from './components/Home';
-import Register from './components/Register';
-import Login from './components/Login';
-import Products from './components/Products';
+import Layout from '@/components/Layout';
+import ErrorPage from '@/components/ErrorPage';
+import Home from '@/components/Home';
+import Register from '@/components/Register';
+import Login from '@/components/Login';
+import Products from '@/components/Products';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
@@ -29,6 +29,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-const Router = () => <RouterProvider router={router} />;
+const AppRouterProvider = () => <RouterProvider router={router} />;
 
-export default Router;
+export default AppRouterProvider;
