@@ -25,11 +25,16 @@ const http = (() => {
       ...options,
     };
 
-    const response = await fetch(`${API_URL}/${endpoint}`, reqOptions).catch(
-      (error) => console.log(error),
-    );
+    const response = await fetch(`${API_URL}/${endpoint}`, reqOptions);
+
     try {
-      return await response.json();
+      const jsonData = await response.json();
+
+      if (!response.ok && !response.redirected) {
+        return Promise.reject(jsonData.message);
+      } else {
+        return jsonData;
+      }
     } catch (error) {
       /* do nothing; no parseable json body */
     }
