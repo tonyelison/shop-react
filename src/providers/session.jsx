@@ -19,6 +19,7 @@ const SessionProvider = ({ children }) => {
         setSession(data);
         return data;
       }),
+    retry: false,
   });
 
   return (
