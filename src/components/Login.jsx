@@ -1,15 +1,25 @@
+import { useMutation } from '@tanstack/react-query';
 import api from '@/utils/api';
+import { useSessionContext } from '@/utils/session-context';
 
 const Login = () => {
+  const { setSession } = useSessionContext();
+
+  const loginMutation = useMutation({
+    mutationFn: (creds) => api.login(creds),
+    onSuccess: (data) => {
+      console.log(data);
+      setSession(data);
+    },
+  });
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const creds = {
+    loginMutation.mutate({
       username: event.target.username.value,
       password: event.target.password.value,
-    };
-
-    api.login(creds);
+    });
   };
 
   return (

@@ -5,7 +5,7 @@ const api = (() => ({
   helloAuth: () => http.get('hello/auth'),
   register: (creds) => http.post('users', creds),
   login: (creds) => http.post('session', creds),
-  logout: (creds) => http.del('session', creds),
+  logout: () => http.del('session'),
 }))();
 
 export default api;
