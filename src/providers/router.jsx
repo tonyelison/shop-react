@@ -2,9 +2,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import ErrorPage from '@/components/ErrorPage';
 import Home from '@/components/Home';
-import Register from '@/components/Register';
-import Login from '@/components/Login';
 import Products from '@/components/Products';
+import Login from '@/components/Login';
+import Register from '@/components/Register';
+import Verify from '@/components/Verify';
 
 const router = createBrowserRouter([
   {
@@ -14,18 +15,22 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       {
-        path: 'register',
-        element: <Register />,
+        path: 'products',
+        element: <Products />,
       },
       {
         path: 'login',
         element: <Login />,
       },
       {
-        path: 'products',
-        element: <Products />,
+        path: 'register',
+        element: <Register />,
       },
     ],
+  },
+  {
+    path: 'verify',
+    element: <Verify />,
   },
 ]);
 
