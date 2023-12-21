@@ -1,11 +1,12 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import ErrorPage from '@/components/ErrorPage';
 import Home from '@/components/Home';
 import Products from '@/components/Products';
 import Login from '@/components/Login';
-import Register from '@/components/Register';
-import Verify from '@/components/Verify';
+import Register from '@/components/Register/index';
+import EmailSent from '@/components/Register/EmailSent';
+import VerifyToken from '@/components/Register/VerifyToken';
 
 const router = createBrowserRouter([
   {
@@ -24,13 +25,20 @@ const router = createBrowserRouter([
       },
       {
         path: 'register',
-        element: <Register />,
+        element: <Outlet />,
+        children: [
+          { index: true, element: <Register /> },
+          {
+            path: 'email-sent',
+            element: <EmailSent />,
+          },
+          {
+            path: 'verify',
+            element: <VerifyToken />,
+          },
+        ],
       },
     ],
-  },
-  {
-    path: 'verify',
-    element: <Verify />,
   },
 ]);
 

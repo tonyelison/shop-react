@@ -19,7 +19,7 @@ const Register = () => {
         .post('session', creds)
         .then((session) => {
           setSession(session);
-          navigate('/');
+          navigate('/register/email-sent');
         })
         .finally(() => setIsLoading(false));
     },
