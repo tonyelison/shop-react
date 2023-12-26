@@ -15,7 +15,7 @@ const Register = () => {
   };
 
   const formFields = [
-    { name: 'username', label: 'Username', type: 'text', required: true },
+    { name: 'username', label: 'Email Address', type: 'email', required: true },
     { name: 'password', label: 'Password', type: 'password', required: true },
   ];
 
