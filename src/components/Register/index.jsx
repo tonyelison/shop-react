@@ -23,8 +23,8 @@ const Register = () => {
         })
         .finally(() => setIsLoading(false));
     },
-    onError: (error) => {
-      setErrorMsg(error);
+    onError: () => {
+      setErrorMsg('Something went wrong');
       setIsLoading(false);
     },
   });

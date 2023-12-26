@@ -15,7 +15,9 @@ const Login = () => {
       setSession(data);
       navigate('/');
     },
-    onError: (error) => setErrorMsg(error),
+    onError: () => {
+      setErrorMsg('Something went wrong');
+    },
   });
 
   const handleSubmit = async (event) => {
