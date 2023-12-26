@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import PropTypes from 'prop-types';
 import Spinner from 'react-bootstrap/Spinner';
+import FormField from './FormField';
 
 const Form = ({
   title,
@@ -52,15 +53,7 @@ const Form = ({
       <h1 className="mb-3">{title}</h1>
       <form onSubmit={submitHandler}>
         {fields.map((field) => (
-          <div key={field.name} className="mb-3">
-            <label htmlFor={field.name}>{field.label}</label>
-            <input
-              className="form-control"
-              type={field.type || 'text'}
-              id={field.name}
-              name={field.name}
-            />
-          </div>
+          <FormField key={field.name} {...field} />
         ))}
         <input
           type="submit"
