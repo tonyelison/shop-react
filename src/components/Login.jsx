@@ -2,15 +2,20 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 import http from '@/utils/http';
+import Form from '@/components/Form';
 import { useSessionContext } from '@/utils/session-context';
 
 const Login = () => {
+  const [isLoading, setIsLoading] = useState();
   const [errorMsg, setErrorMsg] = useState();
   const navigate = useNavigate();
   const { setSession } = useSessionContext();
 
   const loginMutation = useMutation({
-    mutationFn: (creds) => http.post('session', creds),
+    mutationFn: (creds) => {
+      setIsLoading(true);
+      return http.post('session', creds);
+    },
     onSuccess: (data) => {
       setSession(data);
       navigate('/');
@@ -18,9 +23,10 @@ const Login = () => {
     onError: () => {
       setErrorMsg('Something went wrong');
     },
+    onSettled: () => setIsLoading(false),
   });
 
-  const handleSubmit = async (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
 
     loginMutation.mutate({
@@ -32,18 +38,7 @@ const Login = () => {
   return (
     <>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input type="text" id="username" name="username" />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" name="password" />
-        </div>
-        <input type="submit" value="Log In" />
-      </form>
+      <Form submitHandler={submitHandler} isLoading={isLoading} />
       {errorMsg ? <div className="text-danger">{errorMsg}</div> : ''}
     </>
   );

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
-import Spinner from 'react-bootstrap/Spinner';
+import Form from '@/components/Form';
 import http from '@/utils/http';
 import { useSessionContext } from '@/utils/session-context';
 
@@ -29,7 +29,7 @@ const Register = () => {
     },
   });
 
-  const handleSubmit = async (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
 
     registerMutation.mutate({
@@ -41,19 +41,7 @@ const Register = () => {
   return (
     <>
       <h1>Create Account</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input type="text" id="username" name="username" />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" name="password" />
-        </div>
-        <input type="submit" value="Sign Up" />
-        {isLoading ? <Spinner animation="border" /> : ''}
-      </form>
+      <Form submitHandler={submitHandler} isLoading={isLoading} />
       {errorMsg ? <div className="text-danger">{errorMsg}</div> : ''}
     </>
   );
