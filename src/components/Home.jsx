@@ -4,9 +4,13 @@ const Home = () => {
   return (
     <>
       <h3>Test the API!</h3>
-      <button onClick={() => api.hello()}>Test a public endpoint</button>
+      <button className="btn btn-primary" onClick={() => api.hello()}>
+        Test a public endpoint
+      </button>
       <br />
-      <button onClick={() => api.helloAuth()}>Test an private endpoint</button>
+      <button className="btn btn-primary" onClick={() => api.helloAuth()}>
+        Test a private endpoint
+      </button>
     </>
   );
 };

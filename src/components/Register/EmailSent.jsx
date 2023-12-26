@@ -17,7 +17,12 @@ const EmailSent = () => {
         For security purposes, we sent you an email to verify your identity. Tap
         the button in the email we sent to {} to confirm this address.
       </p>
-      <button onClick={resendEmailMutation.mutate}>Resend Email</button>
+      <button
+        className="btn btn-outline-primary"
+        onClick={resendEmailMutation.mutate}
+      >
+        Resend Email
+      </button>
       {resendEmailMutation.isSuccess ? 'Email resent!' : ''}
     </>
   );
