@@ -55,12 +55,10 @@ const Form = ({
         {fields.map((field) => (
           <FormField key={field.name} {...field} />
         ))}
-        <input
-          type="submit"
-          className="btn btn-primary"
-          value={submitLabel || 'Submit'}
-        />
-        {isLoading ? <Spinner animation="border" /> : ''}
+        <button type="submit" className="btn btn-primary">
+          <span>{submitLabel || 'Submit'}</span>
+          {isLoading ? <Spinner animation="border" size="sm" /> : ''}
+        </button>
       </form>
       {errorMsg ? <div className="text-danger">{errorMsg}</div> : ''}
     </>

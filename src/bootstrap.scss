@@ -24,6 +24,13 @@
 @import '../node_modules/bootstrap/scss/utilities';
 @import '../node_modules/bootstrap/scss/utilities/api';
 
+// Overrides
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .btn-outline-light {
   border: 1px solid transparent;
 }
