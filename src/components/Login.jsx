@@ -22,7 +22,7 @@ const Login = () => {
     <Form
       title="Login"
       fields={formFields}
-      submitBtnLabel="Log in"
+      submitLabel="Log in"
       mutationFn={mutationFn}
       onSuccess={onSuccess}
     />

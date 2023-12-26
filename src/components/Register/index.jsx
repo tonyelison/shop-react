@@ -23,7 +23,7 @@ const Register = () => {
     <Form
       title="Create Account"
       fields={formFields}
-      submitBtnLabel="Log in"
+      submitLabel="Sign up"
       mutationFn={mutationFn}
       onSuccess={onSuccess}
     />

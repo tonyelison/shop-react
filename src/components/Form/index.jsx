@@ -6,7 +6,7 @@ import Spinner from 'react-bootstrap/Spinner';
 const Form = ({
   title,
   fields,
-  submitBtnLabel,
+  submitLabel,
   mutationFn,
   onSuccess,
   onMutateAction,
@@ -61,7 +61,7 @@ const Form = ({
             />
           </div>
         ))}
-        <input type="submit" value={submitBtnLabel || 'Submit'} />
+        <input type="submit" value={submitLabel || 'Submit'} />
         {isLoading ? <Spinner animation="border" /> : ''}
       </form>
       {errorMsg ? <div className="text-danger">{errorMsg}</div> : ''}
@@ -72,7 +72,7 @@ const Form = ({
 Form.propTypes = {
   title: PropTypes.string,
   fields: PropTypes.array,
-  submitBtnLabel: PropTypes.string,
+  submitLabel: PropTypes.string,
   mutationFn: PropTypes.func,
   onSuccess: PropTypes.func,
   onMutateAction: PropTypes.func,
