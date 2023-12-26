@@ -49,19 +49,24 @@ const Form = ({
 
   return (
     <>
-      <h1>{title}</h1>
+      <h1 className="mb-3">{title}</h1>
       <form onSubmit={submitHandler}>
         {fields.map((field) => (
-          <div key={field.name} className="form-group">
+          <div key={field.name} className="mb-3">
             <label htmlFor={field.name}>{field.label}</label>
             <input
+              className="form-control"
               type={field.type || 'text'}
               id={field.name}
               name={field.name}
             />
           </div>
         ))}
-        <input type="submit" value={submitLabel || 'Submit'} />
+        <input
+          type="submit"
+          className="btn btn-primary"
+          value={submitLabel || 'Submit'}
+        />
         {isLoading ? <Spinner animation="border" /> : ''}
       </form>
       {errorMsg ? <div className="text-danger">{errorMsg}</div> : ''}
