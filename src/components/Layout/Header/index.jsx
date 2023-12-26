@@ -1,15 +1,20 @@
 import { Link } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { DropdownMenu } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { useSessionContext } from '@/utils/session-context';
 import api from '@/utils/api';
 import './Header.scss';
 
 const Header = () => {
   const { session, clearSession } = useSessionContext();
+  const navigate = useNavigate();
 
   const logoutHandler = () => {
-    api.logout().then(clearSession);
+    api.logout().then(() => {
+      clearSession();
+      navigate('/login');
+    });
   };
 
   return (
